@@ -4,8 +4,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learnie", "Learnie\Learnie.csproj", "{9FCE4AB3-C734-4FFD-A43C-031659F2A67D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2E9D3BE7-FFD9-465A-91C6-530EA2455B01} = {2E9D3BE7-FFD9-465A-91C6-530EA2455B01}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfLearnie", "WcfLearnie\WcfLearnie.csproj", "{2E9D3BE7-FFD9-465A-91C6-530EA2455B01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfLearnieHost", "WcfLearnieHost\WcfLearnieHost.csproj", "{C2EB8B81-951D-4283-86EF-CED699441F23}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +26,10 @@ Global
 		{2E9D3BE7-FFD9-465A-91C6-530EA2455B01}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E9D3BE7-FFD9-465A-91C6-530EA2455B01}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E9D3BE7-FFD9-465A-91C6-530EA2455B01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2EB8B81-951D-4283-86EF-CED699441F23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2EB8B81-951D-4283-86EF-CED699441F23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2EB8B81-951D-4283-86EF-CED699441F23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2EB8B81-951D-4283-86EF-CED699441F23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
