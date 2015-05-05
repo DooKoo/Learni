@@ -24,6 +24,7 @@ namespace Learnie
         public LoginWindow()
         {
             InitializeComponent();
+            Show();
         }
 
         private void LoginButton_OnClick(object sender, RoutedEventArgs e)

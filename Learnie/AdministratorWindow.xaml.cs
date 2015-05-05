@@ -25,8 +25,12 @@ namespace Learnie
         {
             InitializeComponent();
             Show();
+           
             ServiceClient client = new ServiceClient();
             _usersList = client.GetUsers().ToList();
+            client.Close();
+
+            #region UI initialization & Data binding
 
             var studentsViewItems = new TreeViewItem()
             {
@@ -42,6 +46,7 @@ namespace Learnie
             {
                 Header = "Адміністратори"
             };
+
             _usersList.ForEach((user) =>
             {
                 switch(user.Role)
@@ -60,6 +65,63 @@ namespace Learnie
             UsersTreeView.Items.Add(studentsViewItems);
             UsersTreeView.Items.Add(teachersViewItems);
             UsersTreeView.Items.Add(adminsViewItems);
+
+            RoleBox.Items.Add("Студент");
+            RoleBox.Items.Add("Вчитель");
+            RoleBox.Items.Add("Адміністратор");
+
+            StatusBox.Items.Add("Неактивний");
+            StatusBox.Items.Add("Активний");
+           
+            #endregion
+        }
+
+        private void UsersTreeView_OnSelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        {
+            var username = UsersTreeView.SelectedValue.ToString();
+            User selectedUser = _usersList.Find(user => user.Username == username);
+            if (selectedUser != null)
+            {
+                LoginBox.Text = selectedUser.Username;
+                RoleBox.SelectedIndex = selectedUser.Role;
+                StatusBox.SelectedIndex = selectedUser.Status;
+                ProgressBox.Text = selectedUser.Progress.ToString();
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            new LoginWindow();
+            Close();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (LoginBox.Text.Length != 0 && PasswordBox.Password.Length != 0
+                && ProgressBox.Text.Length != 0)
+            {
+                if (!_usersList.Exists(user => user.Username == LoginBox.Text))
+                {
+                    ServiceClient client = new ServiceClient();
+                    client.AddUser(new User()
+                    {
+                        Username = LoginBox.Text,
+                        Password = PasswordBox.Password,
+                        Role = RoleBox.SelectedIndex,
+                        Status = StatusBox.SelectedIndex,
+                        Progress = Int32.Parse(ProgressBox.Text)
+                    });
+                    client.Close();
+                }
+                else
+                {
+                    ErrorMessage.Text = "Такий користувач вже існує!";
+                }
+            }
+            else
+            {
+                ErrorMessage.Text = "Заповніть всі поля!";
+            }
         }
     }
 }
