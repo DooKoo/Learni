@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Learnie.ServiceReference {
+namespace ServiceProxy.LearnieService {
     using System.Runtime.Serialization;
     using System;
     
@@ -135,7 +135,7 @@ namespace Learnie.ServiceReference {
         private string HtmlContentField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Learnie.ServiceReference.TestQuestion[] QuestionnaireField;
+        private ServiceProxy.LearnieService.TestQuestion[] QuestionnaireField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TitleField;
@@ -164,7 +164,7 @@ namespace Learnie.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Learnie.ServiceReference.TestQuestion[] Questionnaire {
+        public ServiceProxy.LearnieService.TestQuestion[] Questionnaire {
             get {
                 return this.QuestionnaireField;
             }
@@ -370,26 +370,26 @@ namespace Learnie.ServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="LearnieService.IService")]
     public interface IService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/Authorize", ReplyAction="http://tempuri.org/IService/AuthorizeResponse")]
-        Learnie.ServiceReference.User Authorize(string username, string password);
+        ServiceProxy.LearnieService.User Authorize(string username, string password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/Authorize", ReplyAction="http://tempuri.org/IService/AuthorizeResponse")]
-        System.Threading.Tasks.Task<Learnie.ServiceReference.User> AuthorizeAsync(string username, string password);
+        System.Threading.Tasks.Task<ServiceProxy.LearnieService.User> AuthorizeAsync(string username, string password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetLessons", ReplyAction="http://tempuri.org/IService/GetLessonsResponse")]
-        Learnie.ServiceReference.Lesson[] GetLessons();
+        ServiceProxy.LearnieService.Lesson[] GetLessons();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetLessons", ReplyAction="http://tempuri.org/IService/GetLessonsResponse")]
-        System.Threading.Tasks.Task<Learnie.ServiceReference.Lesson[]> GetLessonsAsync();
+        System.Threading.Tasks.Task<ServiceProxy.LearnieService.Lesson[]> GetLessonsAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddUser", ReplyAction="http://tempuri.org/IService/AddUserResponse")]
-        bool AddUser(Learnie.ServiceReference.User newUser);
+        bool AddUser(ServiceProxy.LearnieService.User newUser);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddUser", ReplyAction="http://tempuri.org/IService/AddUserResponse")]
-        System.Threading.Tasks.Task<bool> AddUserAsync(Learnie.ServiceReference.User newUser);
+        System.Threading.Tasks.Task<bool> AddUserAsync(ServiceProxy.LearnieService.User newUser);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/BlockUser", ReplyAction="http://tempuri.org/IService/BlockUserResponse")]
         bool BlockUser(string username);
@@ -404,10 +404,10 @@ namespace Learnie.ServiceReference {
         System.Threading.Tasks.Task<bool> DeleteUserAsync(string username);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddLesson", ReplyAction="http://tempuri.org/IService/AddLessonResponse")]
-        void AddLesson(Learnie.ServiceReference.Lesson newLesson);
+        void AddLesson(ServiceProxy.LearnieService.Lesson newLesson);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddLesson", ReplyAction="http://tempuri.org/IService/AddLessonResponse")]
-        System.Threading.Tasks.Task AddLessonAsync(Learnie.ServiceReference.Lesson newLesson);
+        System.Threading.Tasks.Task AddLessonAsync(ServiceProxy.LearnieService.Lesson newLesson);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/DeleteLesson", ReplyAction="http://tempuri.org/IService/DeleteLessonResponse")]
         bool DeleteLesson(string title);
@@ -422,10 +422,10 @@ namespace Learnie.ServiceReference {
         System.Threading.Tasks.Task AddQuestionAsync(string username, string title, string questionText);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetQuestions", ReplyAction="http://tempuri.org/IService/GetQuestionsResponse")]
-        Learnie.ServiceReference.Question[] GetQuestions();
+        ServiceProxy.LearnieService.Question[] GetQuestions();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetQuestions", ReplyAction="http://tempuri.org/IService/GetQuestionsResponse")]
-        System.Threading.Tasks.Task<Learnie.ServiceReference.Question[]> GetQuestionsAsync();
+        System.Threading.Tasks.Task<ServiceProxy.LearnieService.Question[]> GetQuestionsAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/QuestionAnswer", ReplyAction="http://tempuri.org/IService/QuestionAnswerResponse")]
         void QuestionAnswer(string title, string answer);
@@ -434,19 +434,19 @@ namespace Learnie.ServiceReference {
         System.Threading.Tasks.Task QuestionAnswerAsync(string title, string answer);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetUsers", ReplyAction="http://tempuri.org/IService/GetUsersResponse")]
-        Learnie.ServiceReference.User[] GetUsers();
+        ServiceProxy.LearnieService.User[] GetUsers();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetUsers", ReplyAction="http://tempuri.org/IService/GetUsersResponse")]
-        System.Threading.Tasks.Task<Learnie.ServiceReference.User[]> GetUsersAsync();
+        System.Threading.Tasks.Task<ServiceProxy.LearnieService.User[]> GetUsersAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IServiceChannel : Learnie.ServiceReference.IService, System.ServiceModel.IClientChannel {
+    public interface IServiceChannel : ServiceProxy.LearnieService.IService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ServiceClient : System.ServiceModel.ClientBase<Learnie.ServiceReference.IService>, Learnie.ServiceReference.IService {
+    public partial class ServiceClient : System.ServiceModel.ClientBase<ServiceProxy.LearnieService.IService>, ServiceProxy.LearnieService.IService {
         
         public ServiceClient() {
         }
@@ -467,27 +467,27 @@ namespace Learnie.ServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public Learnie.ServiceReference.User Authorize(string username, string password) {
+        public ServiceProxy.LearnieService.User Authorize(string username, string password) {
             return base.Channel.Authorize(username, password);
         }
         
-        public System.Threading.Tasks.Task<Learnie.ServiceReference.User> AuthorizeAsync(string username, string password) {
+        public System.Threading.Tasks.Task<ServiceProxy.LearnieService.User> AuthorizeAsync(string username, string password) {
             return base.Channel.AuthorizeAsync(username, password);
         }
         
-        public Learnie.ServiceReference.Lesson[] GetLessons() {
+        public ServiceProxy.LearnieService.Lesson[] GetLessons() {
             return base.Channel.GetLessons();
         }
         
-        public System.Threading.Tasks.Task<Learnie.ServiceReference.Lesson[]> GetLessonsAsync() {
+        public System.Threading.Tasks.Task<ServiceProxy.LearnieService.Lesson[]> GetLessonsAsync() {
             return base.Channel.GetLessonsAsync();
         }
         
-        public bool AddUser(Learnie.ServiceReference.User newUser) {
+        public bool AddUser(ServiceProxy.LearnieService.User newUser) {
             return base.Channel.AddUser(newUser);
         }
         
-        public System.Threading.Tasks.Task<bool> AddUserAsync(Learnie.ServiceReference.User newUser) {
+        public System.Threading.Tasks.Task<bool> AddUserAsync(ServiceProxy.LearnieService.User newUser) {
             return base.Channel.AddUserAsync(newUser);
         }
         
@@ -507,11 +507,11 @@ namespace Learnie.ServiceReference {
             return base.Channel.DeleteUserAsync(username);
         }
         
-        public void AddLesson(Learnie.ServiceReference.Lesson newLesson) {
+        public void AddLesson(ServiceProxy.LearnieService.Lesson newLesson) {
             base.Channel.AddLesson(newLesson);
         }
         
-        public System.Threading.Tasks.Task AddLessonAsync(Learnie.ServiceReference.Lesson newLesson) {
+        public System.Threading.Tasks.Task AddLessonAsync(ServiceProxy.LearnieService.Lesson newLesson) {
             return base.Channel.AddLessonAsync(newLesson);
         }
         
@@ -531,11 +531,11 @@ namespace Learnie.ServiceReference {
             return base.Channel.AddQuestionAsync(username, title, questionText);
         }
         
-        public Learnie.ServiceReference.Question[] GetQuestions() {
+        public ServiceProxy.LearnieService.Question[] GetQuestions() {
             return base.Channel.GetQuestions();
         }
         
-        public System.Threading.Tasks.Task<Learnie.ServiceReference.Question[]> GetQuestionsAsync() {
+        public System.Threading.Tasks.Task<ServiceProxy.LearnieService.Question[]> GetQuestionsAsync() {
             return base.Channel.GetQuestionsAsync();
         }
         
@@ -547,11 +547,11 @@ namespace Learnie.ServiceReference {
             return base.Channel.QuestionAnswerAsync(title, answer);
         }
         
-        public Learnie.ServiceReference.User[] GetUsers() {
+        public ServiceProxy.LearnieService.User[] GetUsers() {
             return base.Channel.GetUsers();
         }
         
-        public System.Threading.Tasks.Task<Learnie.ServiceReference.User[]> GetUsersAsync() {
+        public System.Threading.Tasks.Task<ServiceProxy.LearnieService.User[]> GetUsersAsync() {
             return base.Channel.GetUsersAsync();
         }
     }

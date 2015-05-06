@@ -3,34 +3,36 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Панель адміністратора" Height="350" Width="525">
     <Grid>
-        <TreeView x:Name="UsersTreeView" HorizontalAlignment="Left" Height="319" VerticalAlignment="Top" Width="243" SelectedItemChanged="UsersTreeView_OnSelectedItemChanged" />
+        <TreeView x:Name="UsersTreeView" HorizontalAlignment="Left" Height="252" VerticalAlignment="Top" Width="233" SelectedItemChanged="UsersTreeView_OnSelectedItemChanged" Margin="10,32,0,0" />
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Користувачі:" VerticalAlignment="Top"/>
         <Button Content="Вихід" HorizontalAlignment="Left" Margin="432,289,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
         <TextBlock x:Name="ErrorMessage" TextAlignment="Center" HorizontalAlignment="Left" Margin="248,228,0,0" TextWrapping="Wrap" Foreground="Red" VerticalAlignment="Top" Height="56" Width="260"/>
         <Grid Name="ButtonGrid">
             <Button Content="Додати" HorizontalAlignment="Left" Margin="432,203,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
-            <Button Content="Видалити" HorizontalAlignment="Left" Margin="352,203,0,0" VerticalAlignment="Top" Width="75"/>
-            <Button Content="Змінити" HorizontalAlignment="Left" Margin="272,203,0,0" VerticalAlignment="Top" Width="75"/>
+            <Button Content="Видалити" HorizontalAlignment="Left" Margin="352,203,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
+            <Button Content="Змінити" HorizontalAlignment="Left" Margin="272,203,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_3"/>
+            <Button Content="Оновити" HorizontalAlignment="Left" Margin="168,289,0,0" VerticalAlignment="Top" Width="75"/>
         </Grid>
         <Grid Name="UserViewGrid">
             <Grid Name="LoginGrid">
-                <TextBlock HorizontalAlignment="Left" Margin="272,9,0,0" TextWrapping="Wrap" Text="Логін:" VerticalAlignment="Top" RenderTransformOrigin="-0.021,0.543"/>
-                <TextBox x:Name="LoginBox" HorizontalAlignment="Left" Height="23" Margin="328,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="131"/>
+                <TextBlock HorizontalAlignment="Left" Margin="272,33,0,0" TextWrapping="Wrap" Text="Логін:" VerticalAlignment="Top" RenderTransformOrigin="-0.021,0.543"/>
+                <TextBox x:Name="LoginBox" HorizontalAlignment="Left" Height="23" Margin="328,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="131"/>
             </Grid>
             <Grid Name="PasswordGrid">
-                <TextBlock HorizontalAlignment="Left" Margin="272,45,0,0" TextWrapping="Wrap" Text="Пароль:" VerticalAlignment="Top"/>
-                <PasswordBox x:Name="PasswordBox" HorizontalAlignment="Left" Height="23" Margin="328,43,0,0" VerticalAlignment="Top" Width="131"/>
+                <TextBlock HorizontalAlignment="Left" Margin="272,69,0,0" TextWrapping="Wrap" Text="Пароль:" VerticalAlignment="Top"/>
+                <PasswordBox x:Name="PasswordBox" HorizontalAlignment="Left" Height="23" Margin="328,67,0,0" VerticalAlignment="Top" Width="131"/>
             </Grid>
             <Grid Name="RoleGrid">
-                <TextBlock HorizontalAlignment="Left" Margin="272,80,0,0" TextWrapping="Wrap" Text="Роль:" VerticalAlignment="Top" RenderTransformOrigin="-0.021,0.543"/>
-                <ComboBox x:Name="RoleBox" SelectedIndex="0" HorizontalAlignment="Left" Margin="328,80,0,0" VerticalAlignment="Top" Width="131"/>
+                <TextBlock HorizontalAlignment="Left" Margin="272,104,0,0" TextWrapping="Wrap" Text="Роль:" VerticalAlignment="Top" RenderTransformOrigin="-0.021,0.543"/>
+                <ComboBox x:Name="RoleBox" SelectedIndex="0" HorizontalAlignment="Left" Margin="328,104,0,0" VerticalAlignment="Top" Width="131"/>
             </Grid>
             <Grid Name="StatusGrid">
-                <TextBlock HorizontalAlignment="Left" Margin="272,113,0,0" TextWrapping="Wrap" Text="Статус:" VerticalAlignment="Top" RenderTransformOrigin="-0.021,0.543"/>
-                <ComboBox x:Name="StatusBox" SelectedIndex="1"  HorizontalAlignment="Left" Margin="328,113,0,0" VerticalAlignment="Top" Width="131"/>
+                <TextBlock HorizontalAlignment="Left" Margin="272,137,0,0" TextWrapping="Wrap" Text="Статус:" VerticalAlignment="Top" RenderTransformOrigin="-0.021,0.543"/>
+                <ComboBox x:Name="StatusBox" SelectedIndex="1"  HorizontalAlignment="Left" Margin="328,137,0,0" VerticalAlignment="Top" Width="131"/>
             </Grid>
             <Grid Name="ProgressGrid">
-                <TextBlock HorizontalAlignment="Left" Margin="272,146,0,0" TextWrapping="Wrap" Text="Прогрес:" VerticalAlignment="Top" RenderTransformOrigin="-0.021,0.543"/>
-                <TextBox x:Name="ProgressBox" HorizontalAlignment="Left" Height="23" Margin="328,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55"/>
+                <TextBlock HorizontalAlignment="Left" Margin="272,170,0,0" TextWrapping="Wrap" Text="Прогрес:" VerticalAlignment="Top" RenderTransformOrigin="-0.021,0.543"/>
+                <TextBox x:Name="ProgressBox" HorizontalAlignment="Left" Height="23" Margin="328,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55"/>
             </Grid>
         </Grid>
     </Grid>
